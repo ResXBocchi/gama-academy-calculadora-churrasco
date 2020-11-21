@@ -51,11 +51,11 @@ type 2: bebidas
 function getValueMeasure(val, type) {
     switch(type) {
         case 1: {
-            return val >= 1000 ? `${val/1000}kg` : `${val}g`
+            return (val >= 1000 ? `${val/1000}kg` : `${val}g`)
             break;
         }
         case 2: {
-            return val >= 1000 ? `${val/1000}L` : `${val}ml`
+            return val == 'Muita criança para bebida alcoolica!'? 'Muita criança para bebida alcoolica!' : val >= 1000 ? `${val/1000}L` : `${val}ml`
             break;
         }
     }
