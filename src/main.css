@@ -7,7 +7,9 @@ body{
     color: white;
 }
 #img{
-    max-width: 50%;
+    max-width: 100%;
+    width: 700px;
+
 }
 label{
     margin:0.5px;
