@@ -16,6 +16,9 @@ label{
     margin:0.5px;
     font-size:small;
 }
+
+
+
 #form{
     text-align: center;
     justify-content: center;
@@ -28,3 +31,5 @@ label{
 .col{
     margin:2%;
     max-width:210px}
+
+.botaoCalcular{}
