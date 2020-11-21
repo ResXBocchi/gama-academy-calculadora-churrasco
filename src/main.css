@@ -25,5 +25,6 @@ label{
     justify-content: center;
     text-align: center;
 }
-.column{
-    margin:2%;}
+.col{
+    margin:2%;
+    max-width:210px}
