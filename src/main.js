@@ -7,26 +7,31 @@ const calcularChurrasco = () => {
     const homens = document.getElementById('homens-qnt').value;
     const criancas = document.getElementById('criancas-qnt').value;
 
-    const acompanhamentos = document.getElementById('acompanhamentos').value;
+    const acompanhamentos = document.getElementById('acompanhamentos').checked;
+    const vegetariano = document.getElementById('vegetariano').checked;
     const bebidasAlcoolicas = document.getElementById('bebidas-alcoolicas').value;
     const bebidasNaoAlcoolicas = document.getElementById('bebidas-nao-alcoolicas').value;
 
+    const tc = Number(mulheres) *150 +Number(homens) * 200+Number(criancas) *100
+    const tp = Number(mulheres) + Number(homens) + Number(criancas)
+    const ta =  vegetariano?(acompanhamentos ? 100 * Number(tp) : 0) : (acompanhamentos ? 50 * Number(tp) :0)
 
+    
     // Logica de valores por grama e multiplicacao da quantidade de pessoas
-    let totalCarne = mulheres * 150 + homens * 200 + criancas * 100
+    let totalCarne = `Total carne: ${tc}`
 
     // Soma da quantidade de pessoas
-    const totalPessoas = Number(mulheres) + Number(homens) + Number(criancas)
+    const totalPessoas = `Total pessoas: ${tp}`
     
     // 50g de acompanhamento por pessoa
-    const totalAcompanhamento = acompanhamentos ? 50 * Number(totalPessoas) : 0
+    const totalAcompanhamento = `Total acompanhamento: ${ta}`
     
     // 400ml de bebida nao alcoolica para cada pessoa
-    const totalBebidasNaoAlcoolicas = bebidasNaoAlcoolicas ? 500 * Number(bebidasNaoAlcoolicas) : 0
+    const totalBebidasNaoAlcoolicas =
+    Number(criancas)>5?('Muita criança para bebida alcoolica!'):(bebidasNaoAlcoolicas ? `Total bebidas não alcoolicas: ${500 * Number(bebidasNaoAlcoolicas)}` : `Total bebidas não alcoolicas: ${0}`)
     
     // 500ml de bebida alcoolica para cada pessoa :'D
-    const totalBebidasAlcoolicas = bebidasAlcoolicas ? 500 * Number(bebidasAlcoolicas) : 0
-
+    const totalBebidasAlcoolicas = bebidasAlcoolicas ? `Total bebidas alcoolicas: ${500 * Number(bebidasAlcoolicas)}` : `Total bebidas alcoolicas: ${0}`
     
 
     document.getElementById("total-carne").innerHTML = `${getValueMeasure(totalCarne, 1)}`

@@ -1,0 +1,26 @@
+body{
+    justify-content: center;
+    text-align: center;
+    padding-right:5%;
+    padding-left:5%;
+    background-color: black;
+    color: white;
+}
+#img{
+    max-width: 50%;
+}
+label{
+    margin:0.5px;
+    font-size:small;
+}
+#form{
+    text-align: center;
+    justify-content: center;
+
+}
+.row{
+    justify-content: center;
+    text-align: center;
+}
+.column{
+    margin:2%;}
